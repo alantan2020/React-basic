@@ -1,21 +1,23 @@
 import React from 'react'
 
-const articleType = 2  //1 2 3 
-function getArticleTem(){
-  if (articleType === 1){
-    return <div>我是无图模式，数字1</div>
-  } else if (articleType === 2){
-    return <div>我是二图模式，数字2</div>
-  } else {
-    return <div>我是有图模式，数字3</div>
-  }
-}
 export default function App() {
+  // const clickHandler = () => {
+  //   console.log('clicked button按钮点击了')
+  // }
+
+  // 事件传参
+  // const clickHandler = (e) => {
+  //   console.log('clicked button按钮点击了', e)
+  // }
+
+  // 传递自定义参数
+  const clickHandler = (name, e) => {
+    console.log( name , e, '=》点击了按钮')
+  }
   return (
-    <div>
-      <h1>
-      {getArticleTem()}
-      </h1>
-          </div>
+    <div>App
+      {/* <button onClick={clickHandler}>按钮</button> */}
+      <button onClick={(e) => clickHandler('令狐冲',e)}>按钮</button>
+    </div>
   )
 }
