@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1)
-  }
+  const [value,setValue ] = useState('')
   return (
-    <div>App
+    <div>
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        type="text" />
+        
 
-      <button onClick={handleClick}>count is {count}</button>
+
     </div>
   )
 }
-
